@@ -1,0 +1,7 @@
+Project2_*
+*.rds
+*.zip
+.RData
+.Rhistory
+cache
+Project2.log
