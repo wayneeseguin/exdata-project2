@@ -123,7 +123,7 @@ barplot(
   names.arg=aggTotalsBaltimore$year,
   xlab="Year",
   ylab="PM2.5 Emissions (Tons)",
-  main="Total PM2.5 Emissions From All US Sources"
+  main="Total PM2.5 Emissions From All Baltimore City Sources"
 )
 ```
 
@@ -140,19 +140,13 @@ Using the ggplot2 plotting system,
 
 ```r
 library(ggplot2)
-```
 
-```
-## Use suppressPackageStartupMessages to eliminate package startup messages.
-```
-
-```r
 ggp <- ggplot(baltimoreNEI,aes(factor(year),Emissions,fill=type)) +
   geom_bar(stat="identity") +
   theme_bw() + guides(fill=FALSE)+
   facet_grid(.~type,scales = "free",space="free") + 
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Emissions for Baltimore City from 1999-2008 by Source"))
+  labs(title=expression("PM"[2.5]*" Emissions, Baltimore City 1999-2008 by Source Type"))
 
 print(ggp)
 ```
