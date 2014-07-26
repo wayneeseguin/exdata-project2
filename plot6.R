@@ -23,7 +23,7 @@ png("plot6.png",width=480,height=480,units="px",bg="transparent")
 
 library(ggplot2)
  
-ggp <- ggplot(bothNEI, aes(x=year, y=Emissions, fill=city)) +
+ggp <- ggplot(bothNEI, aes(x=factor(year), y=Emissions, fill=city)) +
  geom_bar(aes(fill=year),stat="identity") +
  facet_grid(scales="free", space="free", .~city) +
  guides(fill=FALSE) + theme_bw() +

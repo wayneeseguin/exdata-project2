@@ -140,7 +140,13 @@ Using the ggplot2 plotting system,
 
 ```r
 library(ggplot2)
+```
 
+```
+## Use suppressPackageStartupMessages to eliminate package startup messages.
+```
+
+```r
 ggp <- ggplot(baltimoreNEI,aes(factor(year),Emissions,fill=type)) +
   geom_bar(stat="identity") +
   theme_bw() + guides(fill=FALSE)+
@@ -257,7 +263,7 @@ Now we plot using the ggplot2 system,
 ```r
 library(ggplot2)
  
-ggp <- ggplot(bothNEI, aes(x=year, y=Emissions, fill=city)) +
+ggp <- ggplot(bothNEI, aes(x=factor(year), y=Emissions, fill=city)) +
  geom_bar(aes(fill=year),stat="identity") +
  facet_grid(scales="free", space="free", .~city) +
  guides(fill=FALSE) + theme_bw() +
